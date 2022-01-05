@@ -1,0 +1,55 @@
+.body{
+    background-image: url('../../backgrounds/pokemon.jpg');
+ 
+    height: 100vh;
+}
+
+.principalDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title{
+    /* border: 1px solid red; */
+    background-image: url('../../backgrounds/pokedexHenry.png');
+    width: 700px;
+    height: 150px;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.divButton{
+    /* border: 1px solid red; */
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn{
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    background-color: white;
+    color: red;
+    border-top: 4px solid gray;
+    border-left: 4px solid red;
+    border-right: 4px solid gray;
+    border-bottom: 4px solid red;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.btn:hover{
+    background-color: red;
+    color: white;
+    border-top: 4px solid white;
+    border-left: 4px solid white;
+    border-right: 4px solid white;
+    border-bottom: 4px solid white;
+}
+
+
