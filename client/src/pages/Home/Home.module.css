@@ -6,3 +6,27 @@
     align-items: center;
     justify-content: center;
 }
+
+.divButtons{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.buttons{
+    width: 100px;
+    height: 50px;
+    margin:0 10px 0 10px;
+    background-color: #ff0000;
+    color: white;
+    cursor: pointer;
+    font-weight: 800;
+    font-size:15px;
+}
+
+.buttons:hover{
+    background-color: rgb(138, 9, 9);
+
+}

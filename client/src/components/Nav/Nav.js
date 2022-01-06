@@ -12,6 +12,9 @@ export default function Nav() {
         <li>
           <Link to="/home">Pokedex</Link>
         </li>
+        <li>
+          <Link to="/newpokemon">New Pokemon</Link>
+        </li>
       </ul>
     </div>
   );

@@ -1,0 +1,66 @@
+.titleNewPokemon{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.img{
+    width: 600px;
+    height: 100px;
+    text-align: center;
+}
+.divForm{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form{
+    border: 3px solid #ff0000;
+    border-radius: 15px;
+    background-color: white;
+    width: 800px;
+    height:500px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.labelsDiv{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 20px 0 20px;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+label{
+    margin: 10px;
+    font-size: 20px;
+}
+
+/* p{
+    margin-left: 20px;
+} */
+
+input{
+    margin: 10px;
+    height: 20px
+}
+
+.btn{
+    width: 200px;
+    height: 50px;
+    background-color: #ff0000;
+    color: white;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: rgb(104, 17, 17)
+}
