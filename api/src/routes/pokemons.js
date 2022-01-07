@@ -2,8 +2,8 @@ var express = require("express");
 var router = express.Router();
 const { Pokemon, Type } = require("../db.js");
 const fetch = require("cross-fetch");
-// const url_Base = `https://pokeapi.co/api/v2/pokemon`;
-const url_40Items = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=40";
+
+const url_40Items = "https://pokeapi.co/api/v2/pokemon/?limit=40";
 const url_image =
   "https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg";
 
