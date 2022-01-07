@@ -4,14 +4,14 @@ const { Pokemon, Type } = require("../db.js");
 const fetch = require("cross-fetch");
 
 const url_40Items = "https://pokeapi.co/api/v2/pokemon/?limit=40";
-const url_image =
-  "https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg";
+const url_image = "https://bandai.com.mx/quizes/img/share-adivina-pokemon.jpg";
+// const url_image = url("../../backgrounds/quienes.jpeg");
 
 router.get("/", async (req, res) => {
   // obtener listado pokemons desde api
   // solo datos necesarios para ruta principal (img, name, type)
   const { name } = req.query;
-  console.log(name);
+  // console.log(name);
   const condition = name ? { where: { name }, include: Type } : {};
 
   if (name) {
@@ -90,6 +90,7 @@ router.get("/", async (req, res) => {
 
       let dataDb = await Pokemon.findAll({ include: Type }).then((data) =>
         data.map((e) => {
+          // console.log(e);
           return {
             id: e.id,
             name: e.name,
@@ -102,6 +103,7 @@ router.get("/", async (req, res) => {
 
       Promise.all(dataApi).then((data) => {
         data.map((e) => {
+          // console.log(e);
           let item = {
             id: e.id,
             name: e.name,
@@ -110,6 +112,8 @@ router.get("/", async (req, res) => {
             types: e.types.map((e) => {
               return e.type.name;
             })
+            // height: e.height,
+            // weight: e.weight
           };
           dataDb.push(item);
         });
