@@ -49,34 +49,47 @@ export default function FormNewPokemon() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:3001/pokemons", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(nuevaData)
-    });
-    const pokemon = await response.json();
-    // console.log(pokemon);
-    alert(`El pokemon ${pokemon.name.toUpperCase()} ha sido capturado`);
-    setData({
-      name: "",
-      hp: 0,
-      attack: 0,
-      defense: 0,
-      speed: 0,
-      height: 0,
-      weight: 0,
-      types: []
-    });
+    if (
+      nuevaData.attack === 0 ||
+      nuevaData.defense === 0 ||
+      nuevaData.height === 0 ||
+      nuevaData.hp === 0 ||
+      nuevaData.name === "" ||
+      nuevaData.speed === 0 ||
+      nuevaData.types.length < 1 ||
+      nuevaData.weight === 0
+    ) {
+      alert("Debes rellenar todos los campos");
+    } else {
+      const response = await fetch("http://localhost:3001/pokemons", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(nuevaData)
+      });
+      const pokemon = await response.json();
+      // console.log(pokemon);
+      alert(`El pokemon ${pokemon.name.toUpperCase()} ha sido capturado`);
+      setData({
+        name: "",
+        hp: 0,
+        attack: 0,
+        defense: 0,
+        speed: 0,
+        height: 0,
+        weight: 0,
+        types: []
+      });
+    }
   };
 
   return (
     <div>
       <Nav />
       <div className={style.titleNewPokemon}>
-        <img className={style.img} src={img}></img>
+        <img alt="pokemon" className={style.img} src={img}></img>
       </div>
       <div className={style.divForm}>
         <form className={style.form}>

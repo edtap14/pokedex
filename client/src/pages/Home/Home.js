@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Nav from "../../components/Nav/Nav";
 import Cards from "../../components/Cards/Cards";
+import SearchBar from "../../components/SearchBar/SerchBar";
 import { getPokemons } from "../../actions";
 import style from "./Home.module.css";
 
@@ -18,6 +19,7 @@ export default function Home(props) {
   }, [dispatch]);
 
   const pokemons = useSelector((state) => state.pokemons.pokemons);
+  // console.log(pokemons);
 
   const pagePokemons = () => {
     return pokemons.slice(currentPage, currentPage + numTarjetas);
@@ -36,6 +38,9 @@ export default function Home(props) {
       <div>
         <Nav />
       </div>
+      <div className={style.searchDivBar}>
+        <SearchBar />
+      </div>
       <div className={style.divButtons}>
         <button className={style.buttons} type="button" onClick={prevPage}>
           {prev}
@@ -49,6 +54,7 @@ export default function Home(props) {
           pagePokemons().map((p) => {
             return (
               <Cards
+                key={p.id}
                 name={p.name}
                 attack={p.attack}
                 img={p.img}
