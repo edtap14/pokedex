@@ -8,8 +8,6 @@ const url_image = "https://bandai.com.mx/quizes/img/share-adivina-pokemon.jpg";
 // const url_image = url("../../backgrounds/quienes.jpeg");
 
 router.get("/", async (req, res) => {
-  // obtener listado pokemons desde api
-  // solo datos necesarios para ruta principal (img, name, type)
   const { name } = req.query;
   // console.log(name);
   const condition = name ? { where: { name }, include: Type } : {};
@@ -126,8 +124,7 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/:idPokemon", async (req, res) => {
-  // obtener detalle pokemon segun id
-  // solo datos pedidos en ruta detalle pokemon
+  // console.log(req);
   const { idPokemon } = req.params;
 
   try {
@@ -152,6 +149,7 @@ router.get("/:idPokemon", async (req, res) => {
       await fetch(`https://pokeapi.co/api/v2/pokemon/${idPokemon}`)
         .then((response) => response.json())
         .then((data) => {
+          // console.log(data)
           res.send({
             id: data.id,
             name: data.name,
