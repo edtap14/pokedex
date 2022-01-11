@@ -1,7 +1,8 @@
 import React from "react";
 import style from "./Cards.module.css";
+import { Link } from "react-router-dom";
 
-export default function Cards({ name, attack, img, types }) {
+export default function Cards({ name, attack, img, types, id }) {
   return (
     <div className={style.divCardsCards}>
       <div className={style.divTitle}>
@@ -17,9 +18,14 @@ export default function Cards({ name, attack, img, types }) {
         <p>
           Types:
           {types.map((t) => {
-            return <p>{t[0].toUpperCase() + t.slice(1)}</p>;
+            return <span> {t[0].toUpperCase() + t.slice(1)} / </span>;
           })}
         </p>
+      </div>
+      <div className={style.divBtn}>
+        <Link to={`/detail/${id}`}>
+          <button className={style.btn}>Más Info</button>
+        </Link>
       </div>
     </div>
   );

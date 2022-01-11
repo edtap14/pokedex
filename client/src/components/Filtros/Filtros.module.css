@@ -1,0 +1,12 @@
+.divTypes{
+    border: 1px solid red;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-right: ; */
+}
+
+select{
+    margin-left: 20px;
+}

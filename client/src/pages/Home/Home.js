@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import Nav from "../../components/Nav/Nav";
 import Cards from "../../components/Cards/Cards";
 import SearchBar from "../../components/SearchBar/SerchBar";
+import Filtros from "../../components/Filtros/Filtros";
 import { getPokemons } from "../../actions";
 import style from "./Home.module.css";
 
-export default function Home(props) {
+export default function Home() {
   const prev = "<< Prev";
   const next = "Next >>";
   const numTarjetas = 12;
@@ -49,12 +50,16 @@ export default function Home(props) {
           {next}
         </button>
       </div>
+      <div className={style.divFiltrosHome}>
+        <Filtros />
+      </div>
       <div className={style.divCardsHome}>
         {pokemons?.length > 0 ? (
           pagePokemons().map((p) => {
             return (
               <Cards
                 key={p.id}
+                id={p.id}
                 name={p.name}
                 attack={p.attack}
                 img={p.img}

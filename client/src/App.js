@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing/Landing";
 import Home from "./pages/Home/Home";
 import FormNewPokemon from "./pages/FormNewPokemon/FormNewPokemon";
+import Detail from "./pages/DetailPokemon/Detail";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route exact path="/" element={<Landing />} />
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/newpokemon" element={<FormNewPokemon />} />
+        <Route exact path="/detail/:id" element={<Detail />} />
       </Routes>
     </div>
   );
